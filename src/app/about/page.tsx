@@ -3,7 +3,6 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Timeline } from "@/components/sections/Timeline";
 import { Stats } from "@/components/sections/Stats";
-import { Leadership } from "@/components/sections/Leadership";
 import { company, px } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -89,7 +88,6 @@ export default function AboutPage() {
 
       <Stats />
       <Timeline />
-      <Leadership />
     </>
   );
 }

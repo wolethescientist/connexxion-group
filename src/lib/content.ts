@@ -46,6 +46,7 @@ export const stats = [
 export type NavLink = { label: string; href: string };
 export const nav: NavLink[] = [
   { label: "About", href: "/about" },
+  { label: "Team", href: "/team" },
   { label: "Subsidiaries", href: "/subsidiaries" },
   { label: "Products", href: "/products" },
   { label: "Careers", href: "/careers" },
@@ -387,22 +388,28 @@ export type Leader = {
   role: string;
   bio: string;
   image: string;
+  level: number;
   linkedin?: string;
 };
 
 export const leadership: Leader[] = [
+  // Row 1 / Level 1: GCEO
   {
     name: "Engr. Maxwell Esan",
-    role: "Group Managing Director",
+    role: "Group Chief Executive Officer",
     bio: "Leads a team of passionate developers, designers and strategists in recreating tomorrow, today.",
     image: "/team/maxwell.jpeg",
+    level: 1,
     linkedin: "https://www.linkedin.com/in/maxwell-esan/",
   },
+
+  // Row 2 / Level 2: Executive Officers
   {
     name: "Lauretta Chinenye",
-    role: "Business Lead",
+    role: "Chief Business Development Officer",
     bio: "Drives growth and partnerships across the group's diverse portfolio of companies.",
     image: "/team/lauretta.jpeg",
+    level: 2,
     linkedin: "https://www.instagram.com/laurettachinenye/",
   },
   {
@@ -410,15 +417,71 @@ export const leadership: Leader[] = [
     role: "Chief Financial Officer",
     bio: "Stewards the group's financial health and disciplined capital allocation.",
     image: "/team/rotimi.jpeg",
+    level: 2,
     linkedin: "https://www.linkedin.com/in/akinniyi-rotimi-112098207/",
   },
   {
+    name: "Barr. Chidiebere Romanus Odo",
+    role: "Group Legal Advisor",
+    bio: "Oversees legal affairs, compliance, and corporate governance for all group subsidiaries.",
+    image: "/team/chidi.jpeg",
+    level: 2,
+  },
+  {
+    name: "Philip Jegede",
+    role: "Chief Operating Officer",
+    bio: "Directs the daily operations and business strategies across the group's entities.",
+    image: "/team/philip-jegede.jpeg",
+    level: 2,
+  },
+
+  // Row 3 / Level 3: Functional Leads & Directors
+  {
+    name: "Fatima Yarima",
+    role: "Group HR",
+    bio: "Manages human resource systems, talent development, and organizational culture.",
+    image: "/team/fatima.jpeg",
+    level: 3,
+  },
+  {
+    name: "Azahemen Gudu",
+    role: "Secretary to the GMD",
+    bio: "Coordinates executive communications, support, and scheduling for the GMD.",
+    image: "/team/azahemen.jpeg",
+    level: 3,
+  },
+  {
+    name: "Pius Ekeh",
+    role: "Director of Technology",
+    bio: "Drives technological innovation, product engineering, and digital infrastructure.",
+    image: "/team/pius.jpeg",
+    level: 3,
+  },
+  {
+    name: "Folashade Olugboye",
+    role: "Chief Marketing Officer",
+    bio: "Steers brand strategy, communications, and campaigns across all subsidiaries.",
+    image: "/team/Folashade.png",
+    level: 3,
+  },
+
+  // Row 4 / Level 4: Operations Managers
+  {
     name: "Abimbola Ogunmola",
-    role: "Senior IT Director",
-    bio: "Leads engineering and infrastructure across the group's technology companies.",
+    role: "IT Manager",
+    bio: "Oversees IT operations, network security, and user support systems across the group.",
     image: "/team/abimbola.jpeg",
+    level: 4,
+  },
+  {
+    name: "Amos Auta",
+    role: "Facility Manager",
+    bio: "Coordinates building services, maintenance, and facility operations.",
+    image: "/team/amos.jpeg",
+    level: 4,
   },
 ];
+
 
 /* ----------------------------- Timeline ----------------------------- */
 export const timeline = [

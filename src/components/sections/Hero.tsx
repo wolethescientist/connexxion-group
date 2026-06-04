@@ -8,33 +8,39 @@ import { ArrowRight, ArrowUpRight } from "@/components/ui/Icons";
 
 // Each slide pairs an image with a headline + supporting line about that sector,
 // so the message changes in lockstep with the background.
+// Each slide pairs an image with a headline + supporting line about that sector,
+// so the message changes in lockstep with the background.
 const slides = [
   {
     src: px(16237804, 1800),
     label: "Technology & Telecom",
-    title: "Connecting",
-    accent: "Africa.",
+    title: "Connexxion",
+    accent: "Telecom",
+    slogan: "Connecting Africa.",
     copy: "Core networks, cloud and software that keep a continent moving.",
   },
   {
     src: px(5298215, 1800),
     label: "Engineering & Construction",
-    title: "Engineering",
-    accent: "progress.",
+    title: "Connexxion",
+    accent: "Engineering",
+    slogan: "Engineering progress.",
     copy: "Mechanical, civil and technical delivery for modern infrastructure.",
   },
   {
     src: px(9893729, 1800),
     label: "Energy & Resources",
-    title: "Powering",
-    accent: "tomorrow.",
+    title: "Connexxion",
+    accent: "Energy",
+    slogan: "Powering tomorrow.",
     copy: "Decision-grade expertise across the entire energy value chain.",
   },
   {
     src: px(14314165, 1800),
     label: "Agriculture & Allied",
-    title: "Growing",
-    accent: "the future.",
+    title: "Connexxion",
+    accent: "Agro Allied",
+    slogan: "Growing the future.",
     copy: "Technology and youth driving the agricultural value chain.",
   },
 ];
@@ -79,7 +85,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="shell relative z-10 pb-14 pt-36 md:pb-20">
+      <div className="shell relative z-10 pb-24 pt-36 md:pb-32">
         {/* Dynamic headline — cross-fades in sync with the background image */}
         <h1 className="display-1 relative min-h-[1.96em] max-w-5xl text-ghost">
           <AnimatePresence>
@@ -99,18 +105,25 @@ export function Hero() {
 
         <div className="mt-9 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           {/* Dynamic supporting line — cross-fades with the headline */}
-          <div className="relative min-h-[3.5rem] w-full max-w-lg sm:min-h-[1.75rem]">
-            <AnimatePresence>
-              <motion.p
+          <div className="relative min-h-[8.5rem] w-full max-w-xl sm:min-h-[7.5rem]">
+            <AnimatePresence mode="popLayout">
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.9, ease, delay: 0.06 }}
-                className="absolute left-0 top-0 text-lg leading-relaxed text-ghost/80 will-change-transform"
+                className="absolute left-0 top-0 w-full will-change-transform"
               >
-                {slide.copy}
-              </motion.p>
+                {/* Slogan in brand white */}
+                <p className="text-2xl md:text-3xl font-display font-semibold text-ghost tracking-tight mb-2.5">
+                  {slide.slogan}
+                </p>
+                {/* Description copy with increased font size */}
+                <p className="text-base md:text-lg leading-relaxed text-mute">
+                  {slide.copy}
+                </p>
+              </motion.div>
             </AnimatePresence>
           </div>
 

@@ -5,7 +5,6 @@ import { Sectors } from "@/components/sections/Sectors";
 import { CompanyGrid } from "@/components/sections/CompanyGrid";
 import { Stats } from "@/components/sections/Stats";
 import { WhyConnexxion } from "@/components/sections/WhyConnexxion";
-import { Leadership } from "@/components/sections/Leadership";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Insights } from "@/components/sections/Insights";
 import { PartnerMarquee } from "@/components/ui/Marquee";
@@ -52,7 +51,6 @@ export default function Home() {
 
       <Stats />
       <WhyConnexxion />
-      <Leadership />
       <Testimonials />
       <Insights />
     </>
