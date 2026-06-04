@@ -3,15 +3,43 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { company, px } from "@/lib/content";
+import { px } from "@/lib/content";
 import { ArrowRight, ArrowUpRight } from "@/components/ui/Icons";
 
+// Each slide pairs an image with a headline + supporting line about that sector,
+// so the message changes in lockstep with the background.
 const slides = [
-  { src: px(16237804, 1800), label: "Abuja · Technology & Telecom" },
-  { src: px(5298215, 1800), label: "Engineering & Construction" },
-  { src: px(9893729, 1800), label: "Energy & Resources" },
-  { src: px(14314165, 1800), label: "Agriculture & Allied" },
+  {
+    src: px(16237804, 1800),
+    label: "Technology & Telecom",
+    title: "Connecting",
+    accent: "Africa.",
+    copy: "Core networks, cloud and software that keep a continent moving.",
+  },
+  {
+    src: px(5298215, 1800),
+    label: "Engineering & Construction",
+    title: "Engineering",
+    accent: "progress.",
+    copy: "Mechanical, civil and technical delivery for modern infrastructure.",
+  },
+  {
+    src: px(9893729, 1800),
+    label: "Energy & Resources",
+    title: "Powering",
+    accent: "tomorrow.",
+    copy: "Decision-grade expertise across the entire energy value chain.",
+  },
+  {
+    src: px(14314165, 1800),
+    label: "Agriculture & Allied",
+    title: "Growing",
+    accent: "the future.",
+    copy: "Technology and youth driving the agricultural value chain.",
+  },
 ];
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export function Hero() {
   const [i, setI] = useState(0);
@@ -20,6 +48,8 @@ export function Hero() {
     const t = setInterval(() => setI((p) => (p + 1) % slides.length), 5500);
     return () => clearInterval(t);
   }, []);
+
+  const slide = slides[i];
 
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden">
@@ -36,8 +66,8 @@ export function Hero() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={slides[i].src}
-              alt={slides[i].label}
+              src={slide.src}
+              alt={slide.label}
               className={`h-full w-full object-cover ${i % 2 === 0 ? "kenburns-a" : "kenburns-b"}`}
             />
           </motion.div>
@@ -50,42 +80,46 @@ export function Hero() {
 
       {/* Content */}
       <div className="shell relative z-10 pb-14 pt-36 md:pb-20">
-        <h1 className="display-1 max-w-5xl text-ghost">
-          {["Recreating", "Tomorrow"].map((w, wi) => (
-            <span key={wi} className="mr-[0.25em] inline-block overflow-hidden align-bottom">
-              <motion.span
-                className="inline-block"
-                initial={{ y: "110%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 + wi * 0.1 }}
-              >
-                {w}
-              </motion.span>
-            </span>
-          ))}
-          <span className="block overflow-hidden">
+        {/* Dynamic headline — cross-fades in sync with the background image */}
+        <h1 className="display-1 relative min-h-[1.96em] max-w-5xl text-ghost">
+          <AnimatePresence>
             <motion.span
-              className="inline-block font-display text-grad"
-              initial={{ y: "110%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+              key={i}
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -14 }}
+              transition={{ duration: 1, ease }}
+              className="absolute bottom-0 left-0 block max-w-5xl will-change-transform"
             >
-              Today.
+              {slide.title}{" "}
+              <span className="text-grad">{slide.accent}</span>
             </motion.span>
-          </span>
+          </AnimatePresence>
         </h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
-          className="mt-9 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
-        >
-          <p className="max-w-lg text-lg leading-relaxed text-ghost/80">
-            {company.promise}
-          </p>
+        <div className="mt-9 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          {/* Dynamic supporting line — cross-fades with the headline */}
+          <div className="relative min-h-[3.5rem] w-full max-w-lg sm:min-h-[1.75rem]">
+            <AnimatePresence>
+              <motion.p
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.9, ease, delay: 0.06 }}
+                className="absolute left-0 top-0 text-lg leading-relaxed text-ghost/80 will-change-transform"
+              >
+                {slide.copy}
+              </motion.p>
+            </AnimatePresence>
+          </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease, delay: 0.6 }}
+            className="flex flex-wrap items-center gap-4"
+          >
             <Link
               href="/subsidiaries"
               className="group inline-flex items-center gap-2.5 rounded-full bg-emerald px-7 py-3.5 text-sm font-medium text-[#04120a] transition-all duration-300 hover:bg-emerald-bright hover:shadow-[0_8px_44px_-8px_rgba(15,166,89,0.7)]"
@@ -100,8 +134,8 @@ export function Hero() {
               Our story
               <ArrowUpRight className="h-4 w-4 text-emerald" />
             </Link>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Slide indicators */}
         <div className="mt-12 flex items-center gap-6 border-t border-white/10 pt-6">
@@ -121,18 +155,20 @@ export function Hero() {
               </button>
             ))}
           </div>
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={i}
-              initial={{ opacity: 0, x: -6 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 6 }}
-              transition={{ duration: 0.4 }}
-              className="font-mono text-xs uppercase tracking-[0.2em] text-mute"
-            >
-              {slides[i].label}
-            </motion.span>
-          </AnimatePresence>
+          <div className="relative h-4 flex-1">
+            <AnimatePresence>
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, x: -6 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 6 }}
+                transition={{ duration: 0.7, ease }}
+                className="absolute left-0 top-0 whitespace-nowrap font-mono text-xs uppercase tracking-[0.2em] text-mute"
+              >
+                {slide.label}
+              </motion.span>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>

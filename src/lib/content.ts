@@ -25,7 +25,7 @@ export const company = {
     "To provide an unparalleled experience as the most trusted leaders in Technology, Engineering, Oil & Gas, and Energy-related services.",
   founded: 2010,
   hq: "2A Iller Crescent, Maitama, Abuja, Nigeria",
-  phone: "+234 1 252 5141",
+  phone: "09161240000",
   email: "info@connexxiongroup.com",
   hours: "Mon – Sat: 8am – 5pm · Sunday: Closed",
   countries: ["Nigeria", "South Africa", "Niger"],

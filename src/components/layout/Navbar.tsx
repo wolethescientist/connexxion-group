@@ -297,9 +297,9 @@ function NavDropdown({
                       <span className="text-sm text-ghost transition-colors duration-200 group-hover:text-emerald">
                         {it.label}
                       </span>
-                      <span className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-faint">
+                      {/* <span className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-faint">
                         {it.sublabel}
-                      </span>
+                      </span> */}
                     </>
                   );
                   const cls =
