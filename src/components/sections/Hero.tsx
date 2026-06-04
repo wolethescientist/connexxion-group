@@ -12,7 +12,7 @@ import { ArrowRight, ArrowUpRight } from "@/components/ui/Icons";
 // so the message changes in lockstep with the background.
 const slides = [
   {
-    src: px(16237804, 1800),
+    src: px(17323801, 1800),
     label: "Technology & Telecom",
     title: "Connexxion",
     accent: "Telecom",

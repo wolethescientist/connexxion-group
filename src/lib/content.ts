@@ -269,21 +269,36 @@ export const subsidiaries: Subsidiary[] = [
     image: px(7548828),
   },
   {
-    slug: "cnx-products",
-    name: "CNX Products",
-    sector: "Telecom & IT",
-    tagline: "An A–Z business management system.",
-    description:
-      "CNX is an A–Z business management system that helps small, medium and large businesses manage their systems, structures and processes with ease.",
-    long: "CNX Products is the platform arm of the group — a suite of business management software that unifies operations, structure and process for organisations of every size, distilled from years of delivery across sectors.",
+    slug: "helium-power",
+    name: "Helium Power",
+    sector: "Energy & Resources",
+    tagline: "Clean, reliable power generation engineered for Africa.",
+    description: "Helium Power is an energy infrastructure provider focusing on clean, efficient, and scalable power generation and distribution solutions.",
+    long: "Helium Power specializes in modern power generation, resource management, and utility infrastructure delivery. We develop clean energy solutions, thermal power systems, and smart grid distribution networks to meet the growing energy demands of industries and municipalities across the continent.",
     highlights: [
-      "Unified business operations",
-      "Process & workflow automation",
-      "Scales from SME to enterprise",
-      "Built on proven delivery",
+      "Clean & sustainable power generation",
+      "Smart grid power distribution",
+      "Infrastructure asset development",
+      "Renewable energy transition planning",
     ],
-    url: "https://cnx247.com/",
-    image: px(4597280),
+    url: "https://connexxiongroup.com/portfolio-category/energy/",
+    image: px(9800092),
+  },
+  {
+    slug: "cyrustic-consult",
+    name: "Cyrustic Consult",
+    sector: "Human Capital",
+    tagline: "Strategic business consulting and advisory services.",
+    description: "Cyrustic Consult offers decision-grade management consulting, corporate strategy advisory, and human capital solutions.",
+    long: "Cyrustic Consult works with public and private sector organizations to deliver strategic business advisory, policy development, project management, and operational consulting. We help enterprises optimize processes, align resources, and manage corporate risk to drive long-term institutional growth.",
+    highlights: [
+      "Management & corporate strategy consulting",
+      "Enterprise risk & policy advisory",
+      "Project management & governance support",
+      "Operational optimization solutions",
+    ],
+    url: "https://laukamz.com/",
+    image: px(3860937),
   },
 ];
 
@@ -360,6 +375,38 @@ export const products: Product[] = [
       "An A–Z business management system for small, medium and large-scale enterprises.",
     url: "https://cnx247.com/",
     image: px(5203849, 1200),
+  },
+  {
+    name: "CNXIGOV",
+    category: "GovTech",
+    description:
+      "A comprehensive digital governance and public services platform designed for modern government administration.",
+    url: "https://www.cnxigov.com/",
+    image: px(3183150, 1200),
+  },
+  {
+    name: "Prisons NCS",
+    category: "GovTech",
+    description:
+      "A secure correctional-management system built in partnership with the Nigerian Correctional Service to digitalize operations and records.",
+    url: "https://amp.connexxiontelecom.com/",
+    image: px(20453360, 1200),
+  },
+  {
+    name: "Video Conferencing Application",
+    category: "Business Suite",
+    description:
+      "High-fidelity real-time video communication, screen-sharing, and collaboration tool designed for secure remote teamwork.",
+    url: "https://video-conferencing-api-1.onrender.com/login",
+    image: px(3182811, 1200),
+  },
+  {
+    name: "Agro-herders tracking system",
+    category: "Agriculture",
+    description:
+      "A real-time tracking and mapping application designed to monitor agro-pastoral movements and prevent herder-farmer conflicts.",
+    url: "https://agro-herders.vercel.app/",
+    image: px(14314165, 1200),
   },
 ];
 

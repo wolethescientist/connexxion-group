@@ -184,7 +184,7 @@ export function Navbar() {
                               {config.items.map((it) =>
                                 it.external ? (
                                   <a
-                                    key={it.href}
+                                    key={it.label}
                                     href={it.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -195,7 +195,7 @@ export function Navbar() {
                                   </a>
                                 ) : (
                                   <Link
-                                    key={it.href}
+                                    key={it.label}
                                     href={it.href}
                                     onClick={closeMobile}
                                     className="block rounded-xl px-4 py-2.5 text-sm text-mute transition-colors hover:text-emerald"
@@ -306,7 +306,7 @@ function NavDropdown({
                     "group flex flex-col gap-0.5 rounded-xl px-3.5 py-2.5 transition-colors duration-200 hover:bg-white/5";
                   return it.external ? (
                     <a
-                      key={it.href}
+                      key={it.label}
                       href={it.href}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -316,7 +316,7 @@ function NavDropdown({
                       {inner}
                     </a>
                   ) : (
-                    <Link key={it.href} href={it.href} role="menuitem" className={cls}>
+                    <Link key={it.label} href={it.href} role="menuitem" className={cls}>
                       {inner}
                     </Link>
                   );

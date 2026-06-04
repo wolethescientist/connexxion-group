@@ -45,7 +45,7 @@ export default function Home() {
               </Link>
             </Reveal>
           </div>
-          <CompanyGrid items={subsidiaries.slice(0, 6)} />
+          <CompanyGrid items={subsidiaries} />
         </div>
       </section>
 
