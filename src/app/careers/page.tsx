@@ -17,8 +17,8 @@ export default function CareersPage() {
         eyebrow="Careers"
         title={
           <>
-            Do the best work of your{" "}
-            <span className="text-grad">career.</span>
+            The best of your career{" "}
+            <span className="text-grad">awaits you.</span>
           </>
         }
         intro={careers.intro}
@@ -30,7 +30,7 @@ export default function CareersPage() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <Reveal>
               <h2 className="display-2 text-ghost">
-                Open <span className="text-grad">positions</span>
+                Career <span className="text-grad">Opportunity</span>
               </h2>
             </Reveal>
             <Reveal delay={0.05}>

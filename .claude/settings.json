@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.pexels.com)",
+      "PowerShell(Remove-Item -Recurse -Force \"$env:TEMP\\\\cnx-imgs\",\"$env:TEMP\\\\cnx-cand\" -ErrorAction SilentlyContinue; Write-Output \"cleaned\")"
+    ]
+  }
+}

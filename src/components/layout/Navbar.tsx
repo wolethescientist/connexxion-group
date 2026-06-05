@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "@/components/ui/Logo";
-import { nav, subsidiaries, products, type NavLink } from "@/lib/content";
+import { nav, subsidiaries, type NavLink } from "@/lib/content";
 import { ArrowUpRight, ChevronDown } from "@/components/ui/Icons";
 
 const cleanName = (n: string) => n.replace(" & Solutions", "");
@@ -22,16 +22,6 @@ const DROPDOWNS: Record<string, DropConfig> = {
     })),
     allLabel: "View all subsidiaries",
     allHref: "/subsidiaries",
-  },
-  "/products": {
-    items: products.map((p) => ({
-      label: p.name,
-      sublabel: p.category,
-      href: p.url,
-      external: true,
-    })),
-    allLabel: "View all products",
-    allHref: "/products",
   },
 };
 

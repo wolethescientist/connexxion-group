@@ -4,6 +4,7 @@ import { Manifesto } from "@/components/sections/Manifesto";
 import { Sectors } from "@/components/sections/Sectors";
 import { CompanyGrid } from "@/components/sections/CompanyGrid";
 import { Stats } from "@/components/sections/Stats";
+import { ProductShowcase } from "@/components/sections/ProductShowcase";
 import { WhyConnexxion } from "@/components/sections/WhyConnexxion";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Insights } from "@/components/sections/Insights";
@@ -29,7 +30,7 @@ export default function Home() {
                 <p className="eyebrow mb-5">[ 03 ] The companies</p>
               </Reveal>
               <Reveal delay={0.05}>
-                <h2 className="display-2 max-w-xl text-ghost">
+                <h2 className="display-2 max-w-4xl text-ghost">
                   A family of companies,<br />
                   <span className="text-grad">each a leader.</span>
                 </h2>
@@ -48,6 +49,8 @@ export default function Home() {
           <CompanyGrid items={subsidiaries} />
         </div>
       </section>
+
+      <ProductShowcase />
 
       <Stats />
       <WhyConnexxion />

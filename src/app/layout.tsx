@@ -1,37 +1,35 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
-import { JetBrains_Mono } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { Chatbot } from "@/components/ui/Chatbot";
 
-const clash = localFont({
-  variable: "--font-clash",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
   display: "swap",
-  src: [
-    { path: "../../public/fonts/ClashDisplay-400.woff2", weight: "400", style: "normal" },
-    { path: "../../public/fonts/ClashDisplay-500.woff2", weight: "500", style: "normal" },
-    { path: "../../public/fonts/ClashDisplay-600.woff2", weight: "600", style: "normal" },
-    { path: "../../public/fonts/ClashDisplay-700.woff2", weight: "700", style: "normal" },
-  ],
+  axes: ["opsz"],
 });
 
-const satoshi = localFont({
-  variable: "--font-satoshi",
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
   display: "swap",
-  src: [
-    { path: "../../public/fonts/Satoshi-400.woff2", weight: "400", style: "normal" },
-    { path: "../../public/fonts/Satoshi-500.woff2", weight: "500", style: "normal" },
-    { path: "../../public/fonts/Satoshi-700.woff2", weight: "700", style: "normal" },
-  ],
 });
 
 const jbmono = JetBrains_Mono({
   variable: "--font-jbmono",
   subsets: ["latin"],
   weight: ["400", "500"],
+});
+
+// Cursive script used for the emerald accent words
+const script = Dancing_Script({
+  variable: "--font-script",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -72,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${clash.variable} ${satoshi.variable} ${jbmono.variable}`}
+      className={`${fraunces.variable} ${inter.variable} ${jbmono.variable} ${script.variable}`}
     >
       <body className="min-h-screen antialiased">
         <SmoothScroll>

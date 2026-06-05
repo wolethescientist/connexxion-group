@@ -18,7 +18,7 @@ export const company = {
   tagline: "Recreating Tomorrow Today",
   promise:
     "We assist progressive companies embrace technology to streamline their processes and secure the future of their business.",
-  diversified: "We are as diversified as our numerous interests.",
+  diversified: "We are as diverse as our interests.",
   mission:
     "To be a role model for innovative technology for African businesses, by providing superior infrastructural capabilities for all our stakeholders.",
   vision:
@@ -28,7 +28,7 @@ export const company = {
   phone: "09161240000",
   email: "info@connexxiongroup.com",
   hours: "Mon – Sat: 8am – 5pm · Sunday: Closed",
-  countries: ["Nigeria", "South Africa", "Niger"],
+  countries: ["Nigeria", "South Africa", "Niger", "UAE", "Qatar", "Hong Kong", "USA", "UK"],
   socials: {
     linkedin: "https://www.linkedin.com/in/maxwell-esan/",
     facebook: "https://www.facebook.com/esanmaxwell",
@@ -40,7 +40,7 @@ export const stats = [
   { value: 2010, label: "Founded in Abuja", suffix: "" },
   { value: 1000, label: "Projects delivered", suffix: "+" },
   { value: 15, label: "Operating companies", suffix: "+" },
-  { value: 3, label: "Countries of presence", suffix: "" },
+  { value: 8, label: "Countries of presence", suffix: "" },
 ];
 
 export type NavLink = { label: string; href: string };
@@ -48,7 +48,6 @@ export const nav: NavLink[] = [
   { label: "About", href: "/about" },
   { label: "Team", href: "/team" },
   { label: "Subsidiaries", href: "/subsidiaries" },
-  { label: "Products", href: "/products" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
@@ -300,6 +299,40 @@ export const subsidiaries: Subsidiary[] = [
     url: "https://laukamz.com/",
     image: px(3860937),
   },
+  {
+    slug: "ocean-and-waves",
+    name: "Ocean & Waves",
+    sector: "Maritime & Shipping",
+    tagline: "Shipping, logistics and marine services across the seas.",
+    description:
+      "Marine logistics, vessel operations and shipping services connecting African trade to global waters.",
+    long: "Ocean & Waves delivers end-to-end maritime services — vessel operations, marine logistics, freight forwarding and offshore support — moving cargo and people safely across coastal and international waters, and keeping the group's trade flowing between ports.",
+    highlights: [
+      "Vessel operations & chartering",
+      "Freight & marine logistics",
+      "Port & offshore support services",
+      "Trade & shipping consultancy",
+    ],
+    url: "https://connexxiongroup.com/",
+    image: px(12485409),
+  },
+  {
+    slug: "dharul-hijrah",
+    name: "Dharul Hijrah",
+    sector: "Travel & Pilgrimage",
+    tagline: "Seamless travel and guided pilgrimage journeys.",
+    description:
+      "Faith-based travel, Hajj and Umrah operations, and tourism services delivered with care from booking to return.",
+    long: "Dharul Hijrah organises Hajj, Umrah and leisure travel end to end — visas, flights, accommodation and on-the-ground guidance — so every traveller experiences a smooth, dignified and well-supported journey.",
+    highlights: [
+      "Hajj & Umrah operations",
+      "Flights, visas & accommodation",
+      "Guided tours & itineraries",
+      "End-to-end traveller care",
+    ],
+    url: "https://connexxiongroup.com/",
+    image: px(16237804),
+  },
 ];
 
 /* ----------------------------- Products (software) ----------------------------- */
@@ -318,7 +351,7 @@ export const products: Product[] = [
     description:
       "Your ultimate destination for finding your dream property — search, list and rent with confidence.",
     url: "https://app.smartrentplus.com/",
-    image: px(16237804, 1200),
+    image: px(31656143, 1200),
   },
   {
     name: "iHumane",
@@ -342,7 +375,7 @@ export const products: Product[] = [
     description:
       "World-class retail technology to propel your business forward — from point of sale to inventory.",
     url: "https://cnxretail.com/",
-    image: px(3735216, 1200),
+    image: px(8422725, 1200),
   },
   {
     name: "iCoop",
@@ -366,7 +399,7 @@ export const products: Product[] = [
     description:
       "A bespoke correctional-management platform engineered to modernise the operations of correctional centres.",
     url: "https://amp.connexxiontelecom.com/",
-    image: px(20453360, 1200),
+    image: px(32529341, 1200),
   },
   {
     name: "CNX247",
@@ -374,7 +407,7 @@ export const products: Product[] = [
     description:
       "An A–Z business management system for small, medium and large-scale enterprises.",
     url: "https://cnx247.com/",
-    image: px(5203849, 1200),
+    image: px(3184357, 1200),
   },
   {
     name: "CNXIGOV",
@@ -390,7 +423,7 @@ export const products: Product[] = [
     description:
       "A secure correctional-management system built in partnership with the Nigerian Correctional Service to digitalize operations and records.",
     url: "https://amp.connexxiontelecom.com/",
-    image: px(20453360, 1200),
+    image: px(586104, 1200),
   },
   {
     name: "Video Conferencing Application",
@@ -398,7 +431,7 @@ export const products: Product[] = [
     description:
       "High-fidelity real-time video communication, screen-sharing, and collaboration tool designed for secure remote teamwork.",
     url: "https://video-conferencing-api-1.onrender.com/login",
-    image: px(3182811, 1200),
+    image: px(5486096, 1200),
   },
   {
     name: "Agro-herders tracking system",
@@ -460,7 +493,7 @@ export const leadership: Leader[] = [
     linkedin: "https://www.instagram.com/laurettachinenye/",
   },
   {
-    name: "Rotimi E. Akinniyi",
+    name: "Rotimi Akinniyi",
     role: "Chief Financial Officer",
     bio: "Stewards the group's financial health and disciplined capital allocation.",
     image: "/team/rotimi.jpeg",
@@ -492,8 +525,8 @@ export const leadership: Leader[] = [
   },
   {
     name: "Azahemen Gudu",
-    role: "Secretary to the GMD",
-    bio: "Coordinates executive communications, support, and scheduling for the GMD.",
+    role: "Secretary to the GCEO",
+    bio: "Coordinates executive communications, support, and scheduling for the GCEO.",
     image: "/team/azahemen.jpeg",
     level: 3,
   },
@@ -539,7 +572,7 @@ export const timeline = [
   { year: "2019", title: "Scale", body: "The footprint passes 100+ engagements and new subsidiaries take shape." },
   { year: "2021", title: "Recognition", body: "The group is recognised for excellence across its industries." },
   { year: "2023", title: "One Group", body: "The companies consolidate under the Connexxion Group identity." },
-  { year: "Today", title: "Recreating tomorrow", body: "A diversified group operating across three countries and a dozen sectors." },
+  { year: "Today", title: "Recreating tomorrow", body: "A diversified group operating across eight countries and a dozen sectors." },
 ];
 
 /* ----------------------------- Testimonials ----------------------------- */

@@ -6,28 +6,28 @@
    ============================================================ */
 
 @theme {
-  /* Core brand */
-  --color-ink: #0a0b0a;
-  --color-obsidian: #0e100e;
-  --color-coal: #141714;
-  --color-charcoal: #231f20;
+  /* Core brand — warm near-blacks give the Fraunces serif a literary, editorial register */
+  --color-ink: #0b0a09;
+  --color-obsidian: #100e0c;
+  --color-coal: #181612;
+  --color-charcoal: #241f1d;
   --color-emerald: #0fa659;
   --color-emerald-bright: #1ec873;
   --color-emerald-deep: #0a6e3c;
   --color-moss: #06351f;
 
-  --color-bone: #f5f6f2;
-  --color-paper: #fbfbf8;
-  --color-stone: #e7e8e2;
+  --color-bone: #f4f1ea;
+  --color-paper: #faf8f2;
+  --color-stone: #e6e3da;
 
-  /* Text */
-  --color-ghost: #edefe9;
-  --color-mute: #9aa097;
-  --color-faint: #6b716a;
+  /* Text — warm-tinted neutrals to match the cream/serif story */
+  --color-ghost: #f0ede5;
+  --color-mute: #a39c8f;
+  --color-faint: #74706a;
 
   /* Fonts */
-  --font-display: var(--font-clash), "Satoshi", system-ui, sans-serif;
-  --font-sans: var(--font-satoshi), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jbmono), ui-monospace, monospace;
 
   /* Easing */
@@ -42,13 +42,16 @@
   html {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    font-optical-sizing: auto;
   }
 
   body {
     background-color: var(--color-ink);
     color: var(--color-ghost);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv01";
+    font-feature-settings: "cv11", "calt", "liga";
+    line-height: 1.65;
+    letter-spacing: -0.005em;
     overflow-x: hidden;
   }
 
@@ -68,8 +71,10 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: 460;
+    /* Serifs carry their own contrast — far less negative tracking than the old geometric sans */
+    letter-spacing: -0.005em;
+    font-optical-sizing: auto;
   }
 }
 
@@ -83,35 +88,43 @@
   @media (min-width: 768px) { .shell { padding-inline: 2.5rem; } }
   @media (min-width: 1280px) { .shell { padding-inline: 3.5rem; } }
 
+  /* Mono micro-label — kept as the single "contrast texture" against the serif display,
+     a classic editorial/fashion pairing */
   .eyebrow {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
     color: var(--color-emerald);
   }
 
   .display-1 {
-    font-size: clamp(2.7rem, 8vw, 7rem);
-    line-height: 0.98;
-    letter-spacing: -0.035em;
+    font-size: clamp(2.3rem, 6vw, 5rem);
+    line-height: 1.04;
+    letter-spacing: -0.012em;
   }
   .display-2 {
     font-size: clamp(2.1rem, 5.2vw, 4.4rem);
-    line-height: 1.02;
-    letter-spacing: -0.03em;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
   }
   .display-3 {
     font-size: clamp(1.6rem, 3.2vw, 2.6rem);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    line-height: 1.12;
+    letter-spacing: -0.006em;
   }
 
+  /* The accent word. A flowing cursive script in living emerald — a warm,
+     hand-lettered counterpoint to the upright Fraunces display. */
   .text-grad {
-    background: linear-gradient(100deg, #1ec873 0%, #0fa659 55%, #0a6e3c 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    font-family: var(--font-script), "Brush Script MT", cursive;
+    font-style: normal;
+    font-weight: 600;
+    /* Scripts carry less x-height — nudge up so it optically matches the serif */
+    font-size: 1.12em;
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--color-emerald-bright);
   }
 
   .hairline {

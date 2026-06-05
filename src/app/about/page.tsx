@@ -18,8 +18,8 @@ export default function AboutPage() {
         eyebrow="About the group"
         title={
           <>
-            We are as diversified as our{" "}
-            <span className="text-grad">numerous interests.</span>
+            We are as diverse as our{" "}
+            <span className="text-grad">interests.</span>
           </>
         }
         intro={company.promise}

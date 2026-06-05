@@ -85,7 +85,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="shell relative z-10 pb-24 pt-36 md:pb-32">
+      <div className="shell relative z-10 pb-14 pt-36 md:pb-20">
         {/* Dynamic headline — cross-fades in sync with the background image */}
         <h1 className="display-1 relative min-h-[1.96em] max-w-5xl text-ghost">
           <AnimatePresence>
