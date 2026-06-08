@@ -19,7 +19,7 @@ export default function SubsidiariesPage() {
             One <span className="text-grad">Connexxion.</span>
           </>
         }
-        intro="Each company is a leader in its field — yet they share one standard of accountability, one appetite for innovation, and one mission to recreate tomorrow today."
+        intro="Each company is a leader in its field — yet they share one standard of accountability, one appetite for innovation, and one mission to recreate Africa's tomorrow today."
       />
       <CompaniesExplorer />
     </>

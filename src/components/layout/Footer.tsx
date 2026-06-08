@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <p className="eyebrow mb-5">Let&rsquo;s build what&rsquo;s next</p>
             <h2 className="display-2 max-w-2xl text-ghost">
-              Ready to recreate <span className="text-grad">tomorrow</span>, today?
+              Ready to recreate <span className="text-grad">Africa's tomorrow</span>, today?
             </h2>
           </div>
           <Link

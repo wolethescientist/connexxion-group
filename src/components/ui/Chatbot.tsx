@@ -66,7 +66,7 @@ function getReply(input: string): Msg {
   if (has("about", "who", "mission", "vision", "history", "story"))
     return {
       from: "bot",
-      text: `Founded in ${company.founded} in Abuja, ${company.name} grew into a diversified African holding company — recreating tomorrow, today.`,
+      text: `Founded in ${company.founded} in Abuja, ${company.name} grew into a diversified African holding company — recreating Africa's tomorrow, today.`,
       links: [{ label: "About the group", href: "/about" }],
     };
 

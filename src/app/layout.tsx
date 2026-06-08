@@ -42,7 +42,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://connexxiongroup.com"),
   title: {
-    default: "Connexxion Group — Recreating Tomorrow Today",
+    default: "Connexxion Group — Recreating Africa's Tomorrow Today",
     template: "%s · Connexxion Group",
   },
   description:
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     "Nigeria",
   ],
   openGraph: {
-    title: "Connexxion Group — Recreating Tomorrow Today",
+    title: "Connexxion Group — Recreating Africa's Tomorrow Today",
     description:
       "A diversified African holding company building the future across multiple industries.",
     type: "website",

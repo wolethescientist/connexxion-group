@@ -8,7 +8,7 @@ import { company, px } from "@/lib/content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Connexxion Group — a diversified African holding company. Our mission, vision, journey and the people building tomorrow today.",
+    "Connexxion Group — a diversified African holding company. Our mission, vision, journey and the people building Africa's tomorrow today.",
 };
 
 export default function AboutPage() {

@@ -15,7 +15,7 @@ export function px(id: number, w = 1100) {
 
 export const company = {
   name: "Connexxion Group",
-  tagline: "Recreating Tomorrow Today",
+  tagline: "Recreating Africa's Tomorrow Today",
   promise:
     "We assist progressive companies embrace technology to streamline their processes and secure the future of their business.",
   diversified: "We are as diverse as our interests.",
@@ -477,7 +477,7 @@ export const leadership: Leader[] = [
   {
     name: "Engr. Maxwell Esan",
     role: "Group Chief Executive Officer",
-    bio: "Leads a team of passionate developers, designers and strategists in recreating tomorrow, today.",
+    bio: "Leads a team of passionate developers, designers and strategists in recreating Africa's tomorrow, today.",
     image: "/team/maxwell.jpeg",
     level: 1,
     linkedin: "https://www.linkedin.com/in/maxwell-esan/",
@@ -518,7 +518,7 @@ export const leadership: Leader[] = [
   // Row 3 / Level 3: Functional Leads & Directors
   {
     name: "Fatima Yarima",
-    role: "Group HR",
+    role: "HR Manager",
     bio: "Manages human resource systems, talent development, and organizational culture.",
     image: "/team/fatima.jpeg",
     level: 3,
@@ -532,7 +532,7 @@ export const leadership: Leader[] = [
   },
   {
     name: "Pius Ekeh",
-    role: "Director of Technology",
+    role: "GM Telecom",
     bio: "Drives technological innovation, product engineering, and digital infrastructure.",
     image: "/team/pius.jpeg",
     level: 3,
@@ -572,7 +572,7 @@ export const timeline = [
   { year: "2019", title: "Scale", body: "The footprint passes 100+ engagements and new subsidiaries take shape." },
   { year: "2021", title: "Recognition", body: "The group is recognised for excellence across its industries." },
   { year: "2023", title: "One Group", body: "The companies consolidate under the Connexxion Group identity." },
-  { year: "Today", title: "Recreating tomorrow", body: "A diversified group operating across eight countries and a dozen sectors." },
+  { year: "Today", title: "Recreating Africa's tomorrow", body: "A diversified group operating across eight countries and a dozen sectors." },
 ];
 
 /* ----------------------------- Testimonials ----------------------------- */
@@ -680,7 +680,7 @@ export const openings: Opening[] = [
     type: "Full-time",
     location: "Abuja · Hybrid",
     description:
-      "Build and run recruitment across the group — sourcing, assessing and hiring the people who recreate tomorrow.",
+      "Build and run recruitment across the group — sourcing, assessing and hiring the people who recreate Africa's tomorrow.",
   },
 ];
 
