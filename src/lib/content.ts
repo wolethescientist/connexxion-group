@@ -317,21 +317,21 @@ export const subsidiaries: Subsidiary[] = [
     image: px(12485409),
   },
   {
-    slug: "dharul-hijrah",
-    name: "Dharul Hijrah",
-    sector: "Travel & Pilgrimage",
-    tagline: "Seamless travel and guided pilgrimage journeys.",
+    slug: "dharul-hijra-fertilizer",
+    name: "Dharul Hijra Fertilizer Company Limited",
+    sector: "Agriculture",
+    tagline: "Premium organic and inorganic fertilizers for modern farming.",
     description:
-      "Faith-based travel, Hajj and Umrah operations, and tourism services delivered with care from booking to return.",
-    long: "Dharul Hijrah organises Hajj, Umrah and leisure travel end to end — visas, flights, accommodation and on-the-ground guidance — so every traveller experiences a smooth, dignified and well-supported journey.",
+      "Sale of organic and inorganic fertilizers alongside the production and distribution of high-quality farm outputs.",
+    long: "Dharul Hijra Fertilizer Company Limited supplies farmers with a full range of organic and inorganic fertilizers formulated for soil health and crop yield. Beyond inputs, the company produces and distributes farm outputs — connecting production to market and closing the loop across the agricultural value chain.",
     highlights: [
-      "Hajj & Umrah operations",
-      "Flights, visas & accommodation",
-      "Guided tours & itineraries",
-      "End-to-end traveller care",
+      "Organic & inorganic fertilizer sales",
+      "Farm output production & distribution",
+      "Soil health & crop yield solutions",
+      "End-to-end agricultural value chain",
     ],
     url: "https://connexxiongroup.com/",
-    image: px(16237804),
+    image: px(33993456),
   },
 ];
 

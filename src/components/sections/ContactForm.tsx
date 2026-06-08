@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import { subsidiaries } from "@/lib/content";
+import { subsidiaries, company } from "@/lib/content";
 import { ArrowRight } from "@/components/ui/Icons";
 
 const interests = ["General enquiry", ...subsidiaries.map((s) => s.sector), "Partnership", "Careers"];
@@ -10,18 +10,34 @@ const uniqueInterests = Array.from(new Set(interests));
 
 export function ContactForm() {
   const role = useSearchParams().get("role");
-  const [status, setStatus] = useState<"idle" | "loading" | "sent">("idle");
-  // Pre-fill when arriving from a careers role link (?role=…)
+  const [status, setStatus] = useState<"idle" | "sent">("idle");
   const [interest, setInterest] = useState(role ? "Careers" : "General enquiry");
   const [message, setMessage] = useState(
     role ? `I'd like to apply for the ${role} role.\n\n` : ""
   );
+  const formRef = useRef<HTMLFormElement>(null);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
-    // No backend wired — simulate a successful submission.
-    setTimeout(() => setStatus("sent"), 1100);
+    const form = formRef.current;
+    if (!form) return;
+
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const org = String(data.get("company") ?? "").trim();
+    const interestVal = String(data.get("interest") ?? "").trim();
+    const msg = String(data.get("message") ?? "").trim();
+
+    const subject = encodeURIComponent(
+      `Enquiry from ${name}${org ? ` — ${org}` : ""} — ${interestVal}`
+    );
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n${org ? `Company: ${org}\n` : ""}Interest: ${interestVal}\n\nMessage:\n${msg}`
+    );
+
+    window.location.href = `mailto:${company.email}?subject=${subject}&body=${body}`;
+    setStatus("sent");
   };
 
   const field =
@@ -36,17 +52,23 @@ export function ContactForm() {
             <path d="m5 13 4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <h3 className="font-display text-2xl text-ghost">Message received.</h3>
+        <h3 className="font-display text-2xl text-ghost">Draft opened.</h3>
         <p className="mt-2 max-w-sm text-mute">
-          Thank you for reaching out to Connexxion Group. A member of our team
-          will be in touch shortly.
+          Your email client should have opened with a pre-filled message to{" "}
+          <span className="text-emerald">{company.email}</span>. Hit send from there and our team will be in touch.
         </p>
+        <button
+          onClick={() => setStatus("idle")}
+          className="mt-6 text-sm text-mute underline underline-offset-4 transition-colors hover:text-ghost"
+        >
+          Send another message
+        </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-2xl border border-white/10 bg-obsidian p-7 md:p-9">
+    <form ref={formRef} onSubmit={onSubmit} className="rounded-2xl border border-white/10 bg-obsidian p-7 md:p-9">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={label}>Full name</label>
@@ -82,10 +104,9 @@ export function ContactForm() {
 
       <button
         type="submit"
-        disabled={status === "loading"}
-        className="group mt-7 inline-flex items-center gap-2.5 rounded-full bg-emerald px-7 py-3.5 text-sm font-medium text-[#04120a] transition-all duration-300 hover:bg-emerald-bright hover:shadow-[0_8px_44px_-8px_rgba(15,166,89,0.7)] disabled:cursor-wait disabled:opacity-70"
+        className="group mt-7 inline-flex items-center gap-2.5 rounded-full bg-emerald px-7 py-3.5 text-sm font-medium text-[#04120a] transition-all duration-300 hover:bg-emerald-bright hover:shadow-[0_8px_44px_-8px_rgba(15,166,89,0.7)]"
       >
-        {status === "loading" ? "Sending…" : "Send message"}
+        Send message
         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
       </button>
     </form>
