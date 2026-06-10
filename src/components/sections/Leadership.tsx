@@ -150,9 +150,6 @@ export function Leadership({ heading = true }: { heading?: boolean }) {
             <div className="absolute -left-[31px] top-2 h-4 w-4 rounded-full border-2 border-emerald bg-ink flex items-center justify-center">
               <div className="h-1.5 w-1.5 rounded-full bg-emerald" />
             </div>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-emerald">
-              Group CEO & GMD
-            </h3>
             <div className="space-y-4">
               {tier1.map((m) => (
                 <Card key={m.name} member={m} />
