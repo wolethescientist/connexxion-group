@@ -162,9 +162,6 @@ export function Leadership({ heading = true }: { heading?: boolean }) {
             <div className="absolute -left-[31px] top-2 h-4 w-4 rounded-full border-2 border-emerald bg-ink flex items-center justify-center">
               <div className="h-1.5 w-1.5 rounded-full bg-emerald" />
             </div>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-emerald">
-              Executive Board
-            </h3>
             <div className="grid gap-4 sm:grid-cols-2">
               {tier2.map((m) => (
                 <Card key={m.name} member={m} />
@@ -177,9 +174,6 @@ export function Leadership({ heading = true }: { heading?: boolean }) {
             <div className="absolute -left-[31px] top-2 h-4 w-4 rounded-full border-2 border-emerald bg-ink flex items-center justify-center">
               <div className="h-1.5 w-1.5 rounded-full bg-emerald" />
             </div>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-emerald">
-              Functional Directors
-            </h3>
             <div className="grid gap-4 sm:grid-cols-2">
               {tier3.map((m) => (
                 <Card key={m.name} member={m} />
@@ -192,9 +186,6 @@ export function Leadership({ heading = true }: { heading?: boolean }) {
             <div className="absolute -left-[31px] top-2 h-4 w-4 rounded-full border-2 border-emerald bg-ink flex items-center justify-center">
               <div className="h-1.5 w-1.5 rounded-full bg-emerald" />
             </div>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-emerald">
-              Operations & Management
-            </h3>
             <div className="grid gap-4 sm:grid-cols-2">
               {tier4.map((m) => (
                 <Card key={m.name} member={m} />
