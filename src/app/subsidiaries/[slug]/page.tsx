@@ -91,17 +91,19 @@ export default async function SubsidiaryPage({
               <p className="mt-8 text-lg leading-relaxed text-mute">{s.long}</p>
             </Reveal>
 
-            <Reveal delay={0.15}>
-              <a
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group mt-10 inline-flex items-center gap-2.5 rounded-full bg-emerald px-7 py-3.5 text-sm font-medium text-[#04120a] transition-all duration-300 hover:bg-emerald-bright hover:shadow-[0_8px_44px_-8px_rgba(15,166,89,0.7)]"
-              >
-                Visit {s.name.split(" ")[0]}
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-            </Reveal>
+            {s.url && (
+              <Reveal delay={0.15}>
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group mt-10 inline-flex items-center gap-2.5 rounded-full bg-emerald px-7 py-3.5 text-sm font-medium text-[#04120a] transition-all duration-300 hover:bg-emerald-bright hover:shadow-[0_8px_44px_-8px_rgba(15,166,89,0.7)]"
+                >
+                  Visit {s.name.split(" ")[0]}
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </Reveal>
+            )}
           </div>
 
           <aside className="lg:col-span-5">

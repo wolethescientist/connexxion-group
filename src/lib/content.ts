@@ -119,7 +119,7 @@ export type Subsidiary = {
   description: string;
   long: string;
   highlights: string[];
-  url: string;
+  url?: string;
   image: string;
   established?: string;
   clients?: string[];
@@ -162,7 +162,7 @@ export const subsidiaries: Subsidiary[] = [
       "Sustainability & transition planning",
       "Infrastructure project delivery",
     ],
-    url: "https://connexxiongroup.com/portfolio-category/energy/",
+    url: "https://energy.connexxiongroup.com",
     image: px(9800092),
   },
   {
@@ -179,7 +179,6 @@ export const subsidiaries: Subsidiary[] = [
       "Inclusion-first design",
       "Secure, agile architecture",
     ],
-    url: "https://connexxiongroup.com/portfolio/cswitch/",
     image: px(5239822),
   },
   {
@@ -280,7 +279,7 @@ export const subsidiaries: Subsidiary[] = [
       "Infrastructure asset development",
       "Renewable energy transition planning",
     ],
-    url: "https://connexxiongroup.com/portfolio-category/energy/",
+    url: "https://www.heliumpowerenergy.com",
     image: px(9800092),
   },
   {
@@ -296,7 +295,6 @@ export const subsidiaries: Subsidiary[] = [
       "Project management & governance support",
       "Operational optimization solutions",
     ],
-    url: "https://laukamz.com/",
     image: px(3860937),
   },
   {
@@ -313,7 +311,6 @@ export const subsidiaries: Subsidiary[] = [
       "Energy supply & grid integration",
       "Sustainable water resource management",
     ],
-    url: "https://connexxiongroup.com/",
     image: px(12485409),
   },
   {
@@ -330,7 +327,6 @@ export const subsidiaries: Subsidiary[] = [
       "Soil health & crop yield solutions",
       "End-to-end agricultural value chain",
     ],
-    url: "https://connexxiongroup.com/",
     image: px(33993456),
   },
 ];
